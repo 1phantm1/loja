@@ -108,6 +108,7 @@ i#close-icon.disable{
 }
 
 .menu-list li {
+    margin-top: 15px;
     margin-bottom: 25px;
 }
 
@@ -120,14 +121,21 @@ i#close-icon.disable{
 .menu-list a:hover{
     color: var(--risk-price);
 }
-
+.need_help{
+    padding-top: 5px;
+    margin-top: 5px;
+}
 .help{
     margin-top: 25px;
-    margin-left: 20px;
+    margin-left: 5px;
     cursor: pointer;
     font-size: 15px;
 }
-
+.help i{
+    font-size: 30px;
+    padding-top: 15px;
+    padding-right: 15px;
+}
 .divLogo img{
     z-index: 998;
     width: 170px;
