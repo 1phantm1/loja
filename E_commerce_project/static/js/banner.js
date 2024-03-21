@@ -5,40 +5,54 @@ document.addEventListener("DOMContentLoaded", function() {
     let isDragging = false;
     let slideId = 0;
 
-    bannerContainer.addEventListener("mousedown", (e) => {
+    function startDrag(e) {
         isDragging = true;
-        startX = e.pageX - bannerContainer.offsetLeft;
+        if (e.type === "mousedown") {
+            startX = e.pageX - bannerContainer.offsetLeft;
+        } else if (e.type === "touchstart") {
+            startX = e.touches[0].pageX - bannerContainer.offsetLeft;
+        }
         scrollLeft = bannerContainer.scrollLeft;
         bannerContainer.style.scrollBehavior = "auto";
-    });
+    }
 
-    bannerContainer.addEventListener("mousemove", (e) => {
+    function moveDrag(e) {
         if (!isDragging) return;
         e.preventDefault();
-        const x = e.pageX - bannerContainer.offsetLeft;
+        let x;
+        if (e.type === "mousemove") {
+            x = e.pageX - bannerContainer.offsetLeft;
+        } else if (e.type === "touchmove") {
+            x = e.touches[0].pageX - bannerContainer.offsetLeft;
+        }
         const walk = (x - startX) * 2;
         bannerContainer.scrollLeft = scrollLeft - walk;
 
-        const threshold = bannerContainer.offsetWidth / 2; 
+        const threshold = bannerContainer.offsetWidth / 2;
         if (Math.abs(walk) > threshold) {
-            slideId = walk < 0 ? 1 : 0; 
+            slideId = walk < 0 ? 1 : 0;
         } else {
-            slideId = null; 
+            slideId = null;
         }
-    });
+    }
 
-    bannerContainer.addEventListener("mouseup", () => {
+    function endDrag(e) {
         isDragging = false;
         bannerContainer.style.scrollBehavior = "smooth";
 
         if (slideId !== null) {
             bannerContainer.scrollLeft = slideId * bannerContainer.offsetWidth;
         }
-    });
+    }
 
-    bannerContainer.addEventListener("mouseleave", () => {
-        isDragging = false;
-        bannerContainer.style.scrollBehavior = "smooth"; 
-    });
+    bannerContainer.addEventListener("mousedown", startDrag);
+    bannerContainer.addEventListener("mousemove", moveDrag);
+    bannerContainer.addEventListener("mouseup", endDrag);
+    bannerContainer.addEventListener("mouseleave", endDrag);
+
+    bannerContainer.addEventListener("touchstart", startDrag);
+    bannerContainer.addEventListener("touchmove", moveDrag);
+    bannerContainer.addEventListener("touchend", endDrag);
+    bannerContainer.addEventListener("touchcancel", endDrag);
 });
     
