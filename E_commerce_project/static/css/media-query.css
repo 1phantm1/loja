@@ -1,0 +1,11 @@
+@media screen and (max-width: 900px){
+    .search{
+        top: 12%;
+    }
+    .category{
+        top: 55%;
+    }
+    .best-sellers{
+        top: 82%;
+    }
+}
