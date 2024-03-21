@@ -187,7 +187,7 @@ i#close-icon.disable{
     margin-top: 40px;
     z-index: 999;
     position: absolute;
-    top: 12%;
+    top: 13%;
     left: 50%;
     transform: translate(-50%);
 }
@@ -251,20 +251,23 @@ i#close-icon.disable{
     padding-top: 15px;
     padding-left: 10px;
     position: absolute;
-    top: 40%;
+    top: 50%;
+    width: 100%;
 }
 .category img{
     width: 100px;
     cursor: pointer;
+    margin-right: 10px;
 }
 .category-content{
     overflow-x: auto;
     white-space: nowrap;
+    display: flex;
 }
 .best-sellers{
     padding-left: 15px;
     position: absolute;
-    top: 85%;
+    top: 70%;
 }
 .best-sellers a{
     font-size: 13px;

@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuIcon = document.getElementById('menu-icon');
     const closeIcon = document.getElementById('close-icon');
     const menuList = document.querySelector('div#menulist');
-    const menu = document.querySelector("")
     const search = document.querySelector("div#search");
     const body = document.querySelector("body");
     const overlay = document.querySelector("div#overlay")
