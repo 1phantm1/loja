@@ -7,10 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function startDrag(e) {
         isDragging = true;
-        if (e.type === "mousedown") {
-            startX = e.pageX - bannerContainer.offsetLeft;
-        } else if (e.type === "touchstart") {
-            startX = e.touches[0].pageX - bannerContainer.offsetLeft;
+        if (e.type === "mousedown" || e.type === "touchstart") {
+            startX = e.type === "mousedown" ? e.pageX : e.touches[0].pageX;
+            startX -= bannerContainer.offsetLeft;
         }
         scrollLeft = bannerContainer.scrollLeft;
         bannerContainer.style.scrollBehavior = "auto";
@@ -20,10 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!isDragging) return;
         e.preventDefault();
         let x;
-        if (e.type === "mousemove") {
-            x = e.pageX - bannerContainer.offsetLeft;
-        } else if (e.type === "touchmove") {
-            x = e.touches[0].pageX - bannerContainer.offsetLeft;
+        if (e.type === "mousemove" || e.type === "touchmove") {
+            x = e.type === "mousemove" ? e.pageX : e.touches[0].pageX;
+            x -= bannerContainer.offsetLeft;
         }
         const walk = (x - startX) * 2;
         bannerContainer.scrollLeft = scrollLeft - walk;
@@ -55,4 +53,3 @@ document.addEventListener("DOMContentLoaded", function() {
     bannerContainer.addEventListener("touchend", endDrag);
     bannerContainer.addEventListener("touchcancel", endDrag);
 });
-    

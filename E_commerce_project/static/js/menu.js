@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.querySelector("div#overlay")
     menuIcon.addEventListener('click', function() {
         menuList.classList.add('active');
+        overlay.classList.add("over-active");
         menuIcon.style.display = 'none';
         closeIcon.style.display = 'block';
         closeIcon.style.pointerEvents = "auto";
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     closeIcon.addEventListener('click', function() {
         menuList.classList.remove('active');
+        overlay.classList.remove("over-active");
         menuIcon.style.display = 'block';
         closeIcon.style.display = 'none';
         search.style.display = "block";
