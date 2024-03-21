@@ -38,6 +38,7 @@
 }
 body{
     font-family: "Ysabeau",  sans-serif;
+    overflow-x: hidden;
 
 }
 .freight{
@@ -92,7 +93,7 @@ i#close-icon.disable{
     position: absolute;
     top: 0%;
     width: 50%;
-    height: 100%;
+    height: 100vh;
     left: -50%; /* Inicia fora da tela */
     transition: left 0.3s ease; /* Adiciona transição de deslize */
     z-index: 9999;
@@ -234,17 +235,24 @@ i#close-icon.disable{
     padding-top: 15px;
     padding-left: 10px;
     position: absolute;
-    top: 70%;
+    top: 75%;
 }
 .category img{
     width: 100px;
     cursor: pointer;
 }
+.category-content{
+    overflow-x: auto;
+    white-space: nowrap;
+}
 .best-sellers{
     padding-left: 15px;
     position: absolute;
-    top: 95%;
+    top: 110%;
 }
 .best-sellers a{
-    padding-left: 55px;
+    font-size: 13px;
+    text-wrap: nowrap;
+    color: var(--links);
+    text-decoration: none;
 }
