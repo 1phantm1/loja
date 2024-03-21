@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@font-face {
+    font-family: "Cabin", sans-serif;
+    src: url(../fonts/Cabin/Cabin/Cabin-weight.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Cabin", sans-serif;
+}
+form{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form input{
+    padding-left: 15px;
+    width: 200px;
+    height: 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #E7E7E7;
+    margin-bottom: 10px;
+}

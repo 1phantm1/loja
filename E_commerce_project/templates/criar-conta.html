@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie sua conta</title>
+    <link rel="stylesheet" href="../static/css/criar-conta.css">
+</head>
+<body>
+    <header>
+        <h1>Tech Blend</h1>
+    </header>
+    <form action="/create" method="post">
+        <label for="nome">Nome completo:</label>
+        <input type="text" name="nome" id="nome" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" required>
+        <label for="confirm_senha">Senha:</label>
+        <input type="password" name="confirm_senha" id="confirm_senha" required>
+        <input type="button" value="Criar conta">
+        <span>Já tem uma conta? <a href="#">Entrar</a></span>
+    </form>
+</body>
+</html>
