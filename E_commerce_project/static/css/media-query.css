@@ -2,10 +2,10 @@
 
 @media screen and (max-width: 768px){
     .search{
-        top: 8%;
+        top: 12%;
     }
     .category{
-        top: 58%;
+        top: 100%;
     }
     .best-sellers{
         top: 88%;
