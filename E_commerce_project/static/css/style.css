@@ -38,7 +38,11 @@
 }
 body{
     font-family: "Ysabeau",  sans-serif;
-
+    scrollbar-width: 0;
+    -ms-overflow-style: none;
+}
+body::-webkit-scrollbar{
+    display: none;
 }
 .overlay{
     display: none;
@@ -105,7 +109,7 @@ i#close-icon.disable{
     position: relative;
     top: -30px;
     width: 50%;
-    height: 100vh;
+    height: 120vh;
     left: -50%; 
     transition: left 0.3s ease; 
     z-index: 9999;
@@ -168,7 +172,7 @@ i#close-icon.disable{
 }
 
 .circle{
-    background-color: #00A3FF;
+    background-color: var(--highlight);
     border-radius: 50% 50%;
     position: absolute;
     top: 9%;
@@ -247,7 +251,7 @@ i#close-icon.disable{
     padding-top: 15px;
     padding-left: 10px;
     position: absolute;
-    top: 75%;
+    top: 58%;
 }
 .category img{
     width: 100px;
@@ -260,7 +264,7 @@ i#close-icon.disable{
 .best-sellers{
     padding-left: 15px;
     position: absolute;
-    top: 110%;
+    top: 85%;
 }
 .best-sellers a{
     font-size: 13px;
