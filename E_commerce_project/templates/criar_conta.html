@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie sua conta</title>
+    <link rel="stylesheet" href="../static/css/criar-conta.css">
+    <script src="https://kit.fontawesome.com/7351777d54.js" crossorigin="anonymous"></script>
+    <script defer src="../static/js/pop-up.js"></script>
+</head>
+<body>
+    <div id="overlay" class="overlay"></div>
+    <header class="header">
+        <div class="divLogo">
+            <img src="../static/images/logo.jpeg" alt="">
+        </div>
+    </header>
+    <h1>Crie sua conta!</h1>
+    <form action="/criar_conta.html" method="post">
+        <input class="inputs" type="text" name="name" id="name" required placeholder="Nome completo">
+        <input class="inputs" type="email" name="mail" id="mail" required placeholder="Email">
+        <input class="inputs" type="text" name="address" id="address" required placeholder="Endereço">
+        <input class="inputs" type="password" name="password" id="password" required placeholder="Senha">
+        <input class="inputs" type="password" name="confirm_pass" id="confirm_pass" required placeholder="Confirme sua senha">
+        <input type="submit" value="Criar conta">
+        <span class="enter">Já tem uma conta? <a href="#">Entrar</a></span>
+    </form>
+    <div id="why" class="why">
+        <div id="pop-up" class="pop-up">
+            <h1>Por que criar uma conta?</h1>
+            <p>Criar uma conta ajuda a Tech Blend a te conhecer melhor e acima de tudo entregar seus pedidos em segurança. Antes de criar sua conta leia os <a href="#">termos e condições</a> e nossa <a href="#">politica de privacidade</a></p>
+            <i id="close-icon" class="fa-solid fa-times-circle"></i>
+        </div>
+        <span id="why_create" class="why_create"><i id="close-icon" class="fa-solid fa-circle-question"></i> Por que devo criar uma conta?</span>
+
+    </div>
+</body>
+</html>
